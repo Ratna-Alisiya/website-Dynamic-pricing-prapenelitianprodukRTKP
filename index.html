@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Packaging Rendang</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Scan QR Label Indikator</h1>
+    <div id="reader" style="width:300px"></div>
+    <div id="quality"></div>
+    <div id="price"></div>
+
+    <h2>Riwayat Scan</h2>
+    <table border="1" id="scanHistory">
+      <thead>
+        <tr>
+          <th>Waktu</th>
+          <th>R</th>
+          <th>G</th>
+          <th>B</th>
+          <th>Kualitas</th>
+          <th>Harga</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="exportToCSV()">Ekspor CSV</button>
+
+    <div id="generator">
+      <h2>Generate QR dari Nilai RGB</h2>
+      <input type="number" id="r" placeholder="R (0-255)" min="0" max="255">
+      <input type="number" id="g" placeholder="G (0-255)" min="0" max="255">
+      <input type="number" id="b" placeholder="B (0-255)" min="0" max="255">
+      <button onclick="generateQR()">Buat QR</button>
+      <canvas id="qrCanvas"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
